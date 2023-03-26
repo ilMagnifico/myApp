@@ -1,4 +1,5 @@
-package myApp;
+package app;
+
 
 public class App {
 

@@ -1,9 +1,12 @@
-package myApp;
+package tests;
+
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import app.App;
 
 public class AppTest {
 
