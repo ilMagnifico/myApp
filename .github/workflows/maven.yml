@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        include:test
+        include:
           - java: 8
             additional-maven-args: "-Pjacoco -DrepoToken=$COVERALLS_REPO_TOKENcoveralls:report"
           - java: 11
