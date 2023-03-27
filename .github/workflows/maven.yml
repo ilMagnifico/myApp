@@ -44,5 +44,7 @@ jobs:
         path: '**/target/site'
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v1
+      with:
+        github-token: ${{ github.token }}
         
         
