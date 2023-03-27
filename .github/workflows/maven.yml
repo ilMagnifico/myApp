@@ -35,14 +35,14 @@ jobs:
       run: >
         mvn verify ${{matrix.additional-maven-args}}
         surefire-report:report-only site:site -DgenerateReports=false
-      working-directory: ${{workdir}}
+      working-directory: ${{env.workdir}}
       env:
         COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_TOKEN}}
       if: ${{always()}}
     - name: Generate JUnit Report 
       run: >
         mvn -f surefire-report:report-only site:site -DgenerateReports=false
-      working-directory: ${{workdir}}
+      working-directory: ${{env.workdir}}
     - name: Archive JUnit Report
       uses: actions/upload-artifact@v2 
       if: ${{always()}}
