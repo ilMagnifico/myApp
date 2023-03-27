@@ -31,7 +31,8 @@ jobs:
         mvn -f myApp/pom.xml
         clean verify
         surefire-report:report-only site:site -DgenerateReports=false
-        if: ${{ always() }}
+        
+      if: ${{ always() }}
     - name: ArchiveJUnitReport 
       uses: actions/upload-artifact@v2 
       if: ${{ always() }}
