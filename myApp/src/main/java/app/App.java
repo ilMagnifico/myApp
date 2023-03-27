@@ -8,7 +8,7 @@ public class App {
 	}
 
 	public String sayHelloAndThat(String string) {
-		return string==null?"Hello":sayHello() + " " + string;
+		return sayHello() + " " + string;
 	}
 
 }
