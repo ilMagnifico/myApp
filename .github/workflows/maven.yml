@@ -42,6 +42,7 @@ jobs:
       with:
         name: surefire-report-jdk-${{ matrix.java }} 
         path: '**/target/site'
-        
+    - name: Coveralls GitHub Action
+      uses: coverallsapp/github-action@v1
         
         
