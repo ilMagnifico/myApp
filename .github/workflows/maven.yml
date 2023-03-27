@@ -11,7 +11,10 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        java: [8,11]
+        include:
+          - java: 8
+            additional-maven-args: "-Pjacoco"
+          - java: 11
         os: [ubuntu-latest, macos-latest, windows-latest]
         
     name: Build with Java ${{ matrix.java }} on ${{ matrix.os }}
@@ -29,7 +32,7 @@ jobs:
     - name: Build with Maven
       run: >
         mvn -f myApp/pom.xml
-        clean verify -Pjacoco
+        clean verify ${{ matrix.additional-maven-args }}
         surefire-report:report-only site:site -DgenerateReports=false
         
       if: ${{ always() }}
