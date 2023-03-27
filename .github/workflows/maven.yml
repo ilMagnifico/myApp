@@ -13,11 +13,7 @@ jobs:
       matrix:
         include:
           - java: 8
-            additional-maven-args: >
-               -Pjacoco 
-               -DrepoToken=$COVERALLS_REPO_TOKEN
-               -DpullRequest=${{ github.event.pull_request.number }}
-               coveralls:report
+            additional-maven-args: "-Pjacoco -DrepoToken=$COVERALLS_REPO_TOKENcoveralls:report"
           - java: 11
         os: [ubuntu-latest, macos-latest, windows-latest]
         
