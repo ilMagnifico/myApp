@@ -35,10 +35,6 @@ jobs:
         surefire-report:report-only site:site -DgenerateReports=false
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
-      if: ${{ always() }}
-    - name: Generate JUnit Report 
-      run: >
-        mvn surefire-report:report-only site:site -DgenerateReports=false
     - name: Archive JUnit Report 
       uses: actions/upload-artifact@v2 
       if: ${{ always() }}
